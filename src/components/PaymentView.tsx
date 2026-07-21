@@ -66,19 +66,19 @@ export default function PaymentView({
       return sppBiayaItems[0].jumlah;
     }
     const selectedSiswa = siswaList.find(s => s.id === selectedSiswaId);
-    return selectedSiswa ? selectedSiswa.tagihanSpp : 350000;
+    return selectedSiswa ? selectedSiswa.tagihanSpp : 50000;
   };
 
   // Form Fields
-  const [jenisPembayaran, setJenisPembayaran] = useState<'SPP' | 'Uang Gedung' | 'Seragam' | 'Kegiatan' | 'Lainnya'>('SPP');
+  const [jenisPembayaran, setJenisPembayaran] = useState<'SPP' | 'Kegiatan' | 'Lainnya'>('SPP');
   const [selectedBiayaId, setSelectedBiayaId] = useState<string>("");
   const [bulanCovered, setBulanCovered] = useState(() => {
     const today = new Date();
     return `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}`;
   });
-  const [jumlah, setJumlah] = useState<number>(350000);
+  const [jumlah, setJumlah] = useState<number>(50000);
   const [isPartialPayment, setIsPartialPayment] = useState(false);
-  const [jumlahBayarSekarang, setJumlahBayarSekarang] = useState<number>(350000);
+  const [jumlahBayarSekarang, setJumlahBayarSekarang] = useState<number>(50000);
   const [metode, setMetode] = useState<'Cash' | 'Transfer'>('Cash');
   const [uangDibayar, setUangDibayar] = useState<string>("");
   const [refundNeeded, setRefundNeeded] = useState<number>(0);
@@ -578,8 +578,6 @@ export default function PaymentView({
                   className="w-full px-3.5 py-2.5 bg-white/5 border border-white/10 text-white font-semibold rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
                 >
                   <option value="SPP" className="bg-slate-900 border-none select-none text-white">SPP (Sumbangan Pembinaan Pendidikan)</option>
-                  <option value="Uang Gedung" className="bg-slate-900 border-none select-none text-white">Uang Gedung / Pangkal</option>
-                  <option value="Seragam" className="bg-slate-900 border-none select-none text-white">Seragam Sekolah</option>
                   <option value="Kegiatan" className="bg-slate-900 border-none select-none text-white">Kegiatan / Program Sekolah</option>
                   <option value="Lainnya" className="bg-slate-900 border-none select-none text-white">Lainnya / Pembelian Buku</option>
                 </select>
