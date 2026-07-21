@@ -363,7 +363,7 @@ export default function DashboardView({
           
           <div className="border-t border-white/5 pt-3 flex justify-between items-center text-xs text-slate-450 font-sans">
             <span>Siswa yang bayar cash berkontribusi terbesar di periode ini.</span>
-            <span className="flex items-center gap-1.5"><Calendar className="size-3 text-blue-400" strokeWidth={2.5} /> Juli 2025 - Juni 2026</span>
+            <span className="flex items-center gap-1.5"><Calendar className="size-3 text-blue-400" strokeWidth={2.5} /> Juli 2026 - Juni 2027</span>
           </div>
         </div>
 
