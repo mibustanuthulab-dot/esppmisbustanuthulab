@@ -50,15 +50,15 @@ export default function App() {
   const [notificationLogs, setNotificationLogs] = useState<NotifikasiLog[]>([]);
   const [config, setConfig] = useState<AppConfig>({
     sheetUrl: "",
-    namaSekolah: "SMA Nusantara Mandiri",
-    alamatSekolah: "Jl. Diponegoro No. 45, Coblong, Kota Bandung, Jawa Barat",
-    teleponSekolah: "(022) 250-1234",
-    penerimaDefault: "Alya Safitri (Bendahara)",
-    namaBank: "Bank Syariah Indonesia (BSI)",
-    rekeningBank: "7123456789",
-    pemilikRekening: "Bendahara SMA Nusantara Mandiri",
-    namaKepalaSekolah: "Drs. H. Mulyadi",
-    nipKepalaSekolah: "196805121993021003"
+    namaSekolah: "MIS Bustanu Thulab",
+    alamatSekolah: "Rawasinga, Klapanunggal Kab. Bogor, Jawa Barat",
+    teleponSekolah: "0858-1152-0199",
+    penerimaDefault: "Ema Malini, S.Pd (Bendahara)",
+    namaBank: "Bank Rakyat Indonesia (BRI)",
+    rekeningBank: "370001061205531",
+    pemilikRekening: "MIS Bustanu Thulab",
+    namaKepalaSekolah: "Abdul Khofur, S.Pd.I",
+    nipKepalaSekolah: "-"
   });
 
   const [activeReceipt, setActiveReceipt] = useState<Transaksi | null>(null);
@@ -194,7 +194,7 @@ export default function App() {
     // 4. Get cached defined fees or fall back
     const cachedBiaya = localStorage.getItem("KAS_SEKOLAH_BIAYA");
     let initialBiaya: BiayaSekolah[] = [
-      { id: "biaya-1", nama: "Iuran SPP Bulanan SMA Kelas X", kategori: "SPP", jumlah: 350000, tenggatWaktu: "2026-06-10" },
+      { id: "biaya-1", nama: "Iuran SPP", kategori: "SPP", jumlah: 50000, tenggatWaktu: "2026-06-10" },
       { id: "biaya-2", nama: "Sumbangan Sarana Prasana (Uang Gedung)", kategori: "Uang Gedung", jumlah: 1500000, tenggatWaktu: "2026-06-30" },
       { id: "biaya-3", nama: "Pengadaan Seragam Olahraga & Almamater", kategori: "Seragam", jumlah: 650000, tenggatWaktu: "2026-06-15" },
       { id: "biaya-4", nama: "Iuran Kegiatan Study Tour Mandiri", kategori: "Kegiatan", jumlah: 200000, tenggatWaktu: "2026-06-25" }
@@ -771,13 +771,13 @@ export default function App() {
     setSetOpenAlamat(config.alamatSekolah);
     setSetOpenTelepon(config.teleponSekolah);
     setSetOpenPenerima(config.penerimaDefault);
-    setSetOpenNamaBank(config.namaBank || "Bank Syariah Indonesia (BSI)");
-    setSetOpenRekeningBank(config.rekeningBank || "7123456789");
-    setSetOpenPemilikRekening(config.pemilikRekening || "Bendahara SMA Nusantara Mandiri");
+    setSetOpenNamaBank(config.namaBank || "Bank Rakyat Indonesia (BRI)");
+    setSetOpenRekeningBank(config.rekeningBank || "370001061205531");
+    setSetOpenPemilikRekening(config.pemilikRekening || "MIS Bustanu Thulab");
     setSetOpenMerchantId(config.merchantId || "");
     setSetOpenLogo(config.logoSekolah || "");
-    setSetOpenNamaKepala(config.namaKepalaSekolah || "Drs. H. Mulyadi");
-    setSetOpenNipKepala(config.nipKepalaSekolah || "196805121993021003");
+    setSetOpenNamaKepala(config.namaKepalaSekolah || "Abdul Khofur, S.Pd.I");
+    setSetOpenNipKepala(config.nipKepalaSekolah || "-");
     
     // Load auth configurations from localStorage (default admin/admin123)
     setSetOpenUsername(localStorage.getItem("KAS_SEKOLAH_USER") || "admin");
@@ -1308,7 +1308,7 @@ export default function App() {
                   <input
                     type="text"
                     required
-                    placeholder="Contoh: Bank Syariah Indonesia (BSI)"
+                    placeholder="Contoh: Bank Rakyat Indonesia (BRI)"
                     value={setOpenNamaBank}
                     onChange={(e) => setSetOpenNamaBank(e.target.value)}
                     className="w-full px-3.5 py-2.5 bg-white/5 border border-white/10 text-white font-semibold rounded-xl text-xs focus:ring-blue-400 focus:bg-slate-900/65 focus:outline-none focus:ring-2 focus:border-transparent"
@@ -1321,7 +1321,7 @@ export default function App() {
                     <input
                       type="text"
                       required
-                      placeholder="Contoh: 7123456789"
+                      placeholder="Contoh: 370001061205531"
                       value={setOpenRekeningBank}
                       onChange={(e) => setSetOpenRekeningBank(e.target.value)}
                       className="w-full px-3.5 py-2.5 bg-white/5 border border-white/10 text-white font-bold font-mono rounded-xl text-xs focus:ring-blue-400 focus:bg-slate-900/65 focus:outline-none focus:ring-2 focus:border-transparent"
@@ -1333,7 +1333,7 @@ export default function App() {
                     <input
                       type="text"
                       required
-                      placeholder="Contoh: SMA Nusantara Mandiri"
+                      placeholder="Contoh: MIS Bustanu Thulab"
                       value={setOpenPemilikRekening}
                       onChange={(e) => setSetOpenPemilikRekening(e.target.value)}
                       className="w-full px-3.5 py-2.5 bg-white/5 border border-white/10 text-white font-semibold rounded-xl text-xs focus:ring-blue-400 focus:bg-slate-900/65 focus:outline-none focus:ring-2 focus:border-transparent"
