@@ -17,7 +17,7 @@ export function formatRupiah(amount: number): string {
 
 /**
  * Converts a number of any scale into Indonesian spelled-out text (Terbilang).
- * E.g., 350000 -> "Tiga Ratus Lima Puluh Ribu Rupiah"
+ * E.g., 50000 -> "Lima Puluh Ribu Rupiah"
  */
 export function terbilang(nominal: number): string {
   const words = [
@@ -137,7 +137,7 @@ export const DAFTAR_TAHUN_PELAJARAN = [
 
 /**
  * Returns the 12 academic months (July - June) for a given academic year.
- * e.g., "2025/2026" -> [ { key: "2025-07", label: "Juli 2025" }, ... ]
+ * e.g., "2026/2027" -> [ { key: "2026-07", label: "Juli 2026" }, ... ]
  */
 export function getMonthsForAcademicYear(academicYear: string) {
   const [startYear, endYear] = academicYear.split("/");
@@ -159,8 +159,8 @@ export function getMonthsForAcademicYear(academicYear: string) {
 
 /**
  * Determines the academic year YYYY/YYYY based on a calendar YYYY-MM key.
- * e.g., "2026-03" -> "2025/2026"
- * e.g., "2025-08" -> "2025/2026"
+ * e.g., "2027-03" -> "2026/2027"
+ * e.g., "2026-08" -> "2026/2027"
  */
 export function getAcademicYearFromCalendarKey(calendarKey: string): string {
   const parts = calendarKey.split("-");
