@@ -68,7 +68,7 @@ export default function StudentsView({
   const [formNama, setFormNama] = useState("");
   const [formKelas, setFormKelas] = useState("");
   const [formAngkatan, setFormAngkatan] = useState("2026");
-  const [formTagihanSpp, setFormTagihanSpp] = useState<number>(350000);
+  const [formTagihanSpp, setFormTagihanSpp] = useState<number>(50000);
   const [formEmail, setFormEmail] = useState("");
   const [formTelepon, setFormTelepon] = useState("");
 
@@ -130,7 +130,7 @@ export default function StudentsView({
       const nama = cols[namaIdx] || "";
       const kelas = cols[kelasIdx] || "X-IPA-1";
       const angkatan = cols[angkatanIdx] || "2026";
-      const tagihanSpp = parseInt(cols[tagihanSppIdx], 10) || 350000;
+      const tagihanSpp = parseInt(cols[tagihanSppIdx], 10) || 50000;
       const emailOrangTua = emailIdx !== -1 ? cols[emailIdx] : "";
       const teleponOrangTua = telpIdx !== -1 ? cols[telpIdx] : "";
       
@@ -240,7 +240,7 @@ export default function StudentsView({
         nama: parsed.nama,
         kelas: parsed.kelas,
         angkatan: parsed.angkatan,
-        tagihanSpp: Number(parsed.tagihanSpp) || 350000,
+        tagihanSpp: Number(parsed.tagihanSpp) || 50000,
         statusSpp: { ...defaultStatusSpp },
         emailOrangTua: parsed.emailOrangTua || "-",
         teleponOrangTua: parsed.teleponOrangTua || "-"
