@@ -152,8 +152,6 @@ export default function ReportsView({ transaksiList, config, onSyncFromSheet, on
   // Category summary for filtered items
   const summaryCategory = {
     "SPP": 0,
-    "Uang Gedung": 0,
-    "Seragam": 0,
     "Kegiatan": 0,
     "Lainnya": 0
   };
@@ -378,14 +376,14 @@ export default function ReportsView({ transaksiList, config, onSyncFromSheet, on
     doc.line(140, sigY + 24, 190, sigY + 24);
 
     doc.setFont("helvetica", "bold");
-    doc.text(`( ${config.namaKepalaSekolah || "Drs. H. Mulyadi"} )`, 15, sigY + 28);
+    doc.text(`( ${config.namaKepalaSekolah || "Abdul Khofur, S.Pd.I"} )`, 15, sigY + 28);
     doc.setFont("helvetica", "normal");
     doc.setFontSize(7);
-    doc.text(`NIP. ${config.nipKepalaSekolah || "196805121993021003"}`, 15, sigY + 32);
+    doc.text(`NIP. ${config.nipKepalaSekolah || "-"}`, 15, sigY + 32);
 
     doc.setFont("helvetica", "bold");
     doc.setFontSize(9);
-    doc.text(`( ${config.penerimaDefault || "Alya Safitri"} )`, 140, sigY + 28);
+    doc.text(`( ${config.penerimaDefault || "Ema Malini, S.Pd"} )`, 140, sigY + 28);
     doc.setFont("helvetica", "normal");
     doc.setFontSize(7);
     doc.text("Administrasi Keuangan", 140, sigY + 32);
@@ -876,14 +874,14 @@ export default function ReportsView({ transaksiList, config, onSyncFromSheet, on
             <p>Mengetahui,</p>
             <p style={{ marginTop: "5px", fontWeight: "bold" }}>Kepala Sekolah</p>
             <div style={{ height: "60px" }}></div>
-            <p style={{ fontWeight: "bold", textDecoration: "underline" }}>( {config.namaKepalaSekolah || "Drs. H. Mulyadi"} )</p>
-            <p>NIP. {config.nipKepalaSekolah || "196805121993021003"}</p>
+            <p style={{ fontWeight: "bold", textDecoration: "underline" }}>( {config.namaKepalaSekolah || "Abdul Khofur, S.Pd.I"} )</p>
+            <p>NIP. {config.nipKepalaSekolah || "-"}</p>
           </div>
           <div style={{ textAlign: "right" }}>
             <p>Bandung, {new Date().toISOString().split("T")[0]}</p>
             <p style={{ marginTop: "5px", fontWeight: "bold" }}>Kasir / Bendahara Sekolah</p>
             <div style={{ height: "60px" }}></div>
-            <p style={{ fontWeight: "bold", textDecoration: "underline" }}>( {config.penerimaDefault || "Alya Safitri"} )</p>
+            <p style={{ fontWeight: "bold", textDecoration: "underline" }}>( {config.penerimaDefault || "Ema Malini, S.Pd"} )</p>
             <p>Administrasi Keuangan</p>
           </div>
         </div>
