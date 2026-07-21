@@ -40,7 +40,7 @@ export default function SchoolFeesView({
   // Form states
   const [formId, setFormId] = useState("");
   const [formNama, setFormNama] = useState("");
-  const [formKategori, setFormKategori] = useState<'SPP' | 'Uang Gedung' | 'Seragam' | 'Kegiatan' | 'Lainnya'>('SPP');
+  const [formKategori, setFormKategori] = useState<'SPP' | 'Kegiatan' | 'Lainnya'>('SPP');
   const [formJumlah, setFormJumlah] = useState<number>(0);
   const [formTenggat, setFormTenggat] = useState("");
 
