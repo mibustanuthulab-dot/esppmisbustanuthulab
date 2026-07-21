@@ -40,7 +40,7 @@ export function generateQRISString(merchantName: string, city: string, amount: n
   if (!cleanName) cleanName = "KASIR SEKOLAH";
   
   let cleanCity = city.toUpperCase().replace(/[^A-Z0-9 ]/g, '').substring(0, 15);
-  if (!cleanCity) cleanCity = "BANDUNG";
+  if (!cleanCity) cleanCity = "BOGOR";
   
   const cleanId = transactionId.replace(/[^A-Z0-9]/ig, '').substring(0, 15);
 
@@ -100,7 +100,7 @@ export default function ReceiptView({ transaksi, config, onClose }: ReceiptViewP
 
   // Initialize selectedTempat with config city or default
   useEffect(() => {
-    const defaultCity = config.alamatSekolah.split(",")[0]?.trim() || "Bandung";
+    const defaultCity = config.alamatSekolah.split(",")[0]?.trim() || "Bogor";
     setSelectedTempat(defaultCity);
   }, [config]);
 
@@ -125,7 +125,7 @@ export default function ReceiptView({ transaksi, config, onClose }: ReceiptViewP
   // Generate dynamic QRIS string for scanning
   const qrisPayload = generateQRISString(
     config.namaSekolah,
-    config.alamatSekolah.split(",")[0] || "BANDUNG",
+    config.alamatSekolah.split(",")[0] || "BOGOR",
     transaksi.jumlah,
     transaksi.id,
     config.merchantId
@@ -365,7 +365,7 @@ export default function ReceiptView({ transaksi, config, onClose }: ReceiptViewP
               </div>
               <div className="flex-1 space-y-1.5 font-sans">
                 <h5 className="text-[11px] font-extrabold text-[#60a5fa] flex items-center gap-1.5 uppercase tracking-wider">
-                  <CreditCard className="size-3.5" /> Scan QRIS / Rekening Transfer ({config.namaBank || "BSI"})
+                  <CreditCard className="size-3.5" /> Scan QRIS / Rekening Transfer ({config.namaBank || "BRI"})
                 </h5>
                 <p className="text-[11px] text-slate-300 leading-relaxed">
                   Scan barcode QRIS di samping melalui M-Banking / E-Wallet, atau lakukan transfer langsung ke rekening bank resmi sekolah di bawah ini:
@@ -373,15 +373,15 @@ export default function ReceiptView({ transaksi, config, onClose }: ReceiptViewP
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-3 gap-y-1 pt-1 text-[11px]">
                   <div>
                     <span className="text-[9px] text-slate-400 block font-medium">Bank Tujuan:</span>
-                    <span className="text-white font-bold">{config.namaBank || "Bank Syariah Indonesia"}</span>
+                    <span className="text-white font-bold">{config.namaBank || "Bank Rakyat Indonesia"}</span>
                   </div>
                   <div>
                     <span className="text-[9px] text-slate-400 block font-medium">No. Rekening:</span>
-                    <span className="text-blue-300 font-mono font-bold tracking-wider hover:underline select-all">{config.rekeningBank || "7123456789"}</span>
+                    <span className="text-blue-300 font-mono font-bold tracking-wider hover:underline select-all">{config.rekeningBank || "370001061205531"}</span>
                   </div>
                   <div>
                     <span className="text-[9px] text-slate-400 block font-medium">Atas Nama:</span>
-                    <span className="text-slate-200 font-semibold">{config.pemilikRekening || "SMA Nusantara Mandiri"}</span>
+                    <span className="text-slate-200 font-semibold">{config.pemilikRekening || "MIS Bustanu Thulab"}</span>
                   </div>
                 </div>
               </div>
