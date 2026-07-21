@@ -116,8 +116,6 @@ export default function DashboardView({
   // Payment categories breakdown
   const categorySummary = {
     "SPP": 0,
-    "Uang Gedung": 0,
-    "Seragam": 0,
     "Kegiatan": 0,
     "Lainnya": 0
   };
@@ -532,7 +530,7 @@ export default function DashboardView({
           <div>
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="font-bold text-white">5 Transaksi Pembayaran Terbaru</h3>
+                <h3 className="font-bold text-white">Transaksi Pembayaran Terbaru</h3>
                 <p className="text-xs text-slate-400 mt-0.5">Penerimaan kas cash dan transfer terbaru</p>
               </div>
               <span className="px-2.5 py-1 rounded-full text-[10px] bg-white/5 text-slate-300 font-semibold tracking-wide uppercase border border-white/10">
