@@ -50,7 +50,7 @@ export interface AppConfig {
 export interface BiayaSekolah {
   id: string;
   nama: string;
-  kategori: 'SPP' | 'Uang Gedung' | 'Seragam' | 'Kegiatan' | 'Lainnya';
+  kategori: 'SPP' | 'Kegiatan' | 'Lainnya';
   jumlah: number;
   tenggatWaktu: string; // Format: YYYY-MM-DD
 }
