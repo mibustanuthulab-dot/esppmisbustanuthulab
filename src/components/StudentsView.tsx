@@ -51,7 +51,7 @@ export default function StudentsView({
   const [statusSppFilter, setStatusSppFilter] = useState("Semua");
   
   const currentDate = new Date();
-  const currentMonthKey = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}`; // e.g. "2026-05"
+  const currentMonthKey = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}`; // e.g. "2026-07"
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState<'add' | 'edit'>('add');
@@ -401,9 +401,9 @@ export default function StudentsView({
 
     doc.text(`TOTAL TAMPIL: ${totalSiswaCount} SISWA`, 20, 44);
     doc.setTextColor(21, 128, 61);
-    doc.text(`LUNAS SPP MEI 2026: ${lunasCount}`, 80, 44);
+    doc.text(`LUNAS SPP Juli 2026: ${lunasCount}`, 80, 44);
     doc.setTextColor(185, 28, 28);
-    doc.text(`BELUM LUNAS MEI 2026: ${belumLunasCount}`, 140, 44);
+    doc.text(`BELUM LUNAS Juli 2026: ${belumLunasCount}`, 140, 44);
 
     // Table mapping
     const tableHeaders = [
@@ -493,7 +493,7 @@ export default function StudentsView({
     setFormNama("");
     setFormKelas("");
     setFormAngkatan("2026");
-    setFormTagihanSpp(350000);
+    setFormTagihanSpp(50000);
     setFormEmail("");
     setFormTelepon("");
     setIsModalOpen(true);
@@ -538,7 +538,7 @@ export default function StudentsView({
         nama: formNama,
         kelas: formKelas,
         angkatan: formAngkatan,
-        tagihanSpp: Number(formTagihanSpp) || 350000,
+        tagihanSpp: Number(formTagihanSpp) || 50000,
         statusSpp: defaultStatusSpp,
         emailOrangTua: formEmail,
         teleponOrangTua: formTelepon
@@ -556,7 +556,7 @@ export default function StudentsView({
         nama: formNama,
         kelas: formKelas,
         angkatan: formAngkatan,
-        tagihanSpp: Number(formTagihanSpp) || 350000,
+        tagihanSpp: Number(formTagihanSpp) || 50000,
         emailOrangTua: formEmail,
         teleponOrangTua: formTelepon
       };
