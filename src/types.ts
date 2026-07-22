@@ -10,7 +10,7 @@ export interface Siswa {
   kelas: string;
   angkatan: string;
   tagihanSpp: number; // Jumlah SPP per bulan
-  statusSpp: Record<string, 'Lunas' | 'Belum_Bayar' | string>; // key: 'YYYY-MM' e.g. '2026-05': 'Lunas' atau 'Kurang:150000'
+  statusSpp: Record<string, 'Lunas' | 'Belum_Bayar' | string>; // key: 'YYYY-MM' e.g. '2026-07': 'Lunas' atau 'Kurang:50000'
   emailOrangTua?: string;
   teleponOrangTua?: string;
 }
@@ -22,8 +22,8 @@ export interface Transaksi {
   siswaNama: string;
   siswaKelas: string;
   tanggal: string; // YYYY-MM-DD HH:mm:ss
-  jenisPembayaran: 'SPP' | 'Uang Gedung' | 'Seragam' | 'Kegiatan' | 'Lainnya';
-  bulanCovered?: string; // e.g. "2026-05" jika jenisPembayaran = 'SPP'
+  jenisPembayaran: 'SPP' | 'Kegiatan' | 'Lainnya';
+  bulanCovered?: string; // e.g. "2026-07" jika jenisPembayaran = 'SPP'
   jumlah: number;
   metode: 'Cash' | 'Transfer';
   keterangan: string;
